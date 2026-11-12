@@ -1,0 +1,20 @@
+node_modules
+.expo
+dist
+ios
+android
+*.lock
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+expo-env.d.ts
+uniwind-types.d.ts
+.DS_Store
+
+# Vendored or generated docs
+docs/heroui-native
+.claude
+AGENTS.md
+CLAUDE.md
+DESIGN.md
+

@@ -1,0 +1,2 @@
+# React Native and Expo resolve native modules from a flat node_modules.
+nodeLinker: hoisted

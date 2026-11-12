@@ -1,0 +1,2 @@
+# Keep LF in the working copy on every OS; Prettier checks for LF (.prettierrc.json).
+* text=auto eol=lf

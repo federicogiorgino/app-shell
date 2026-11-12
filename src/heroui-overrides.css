@@ -1,0 +1,134 @@
+/* HeroUI Native restyled to the shell's Liquid Glass look, once, for the whole app. Each rule
+   overrides HeroUI's own class of the same name, from
+   node_modules/heroui-native/src/styles/components. Uniwind compiles these after HeroUI's, so
+   they win. Only sizes, shapes and type change here; colours stay semantic tokens.
+
+   Order matters: a rule here beats every HeroUI rule for the same class, so when a base rule is
+   overridden, its state rules (is-selected) are restated after it. */
+
+@layer components {
+  /* Button: pills, 36 / 44 / 54 pt tall. */
+  .button__root--size-sm {
+    height: 36px;
+    padding-inline: 14px;
+    border-radius: 9999px;
+  }
+  .button__root--size-md {
+    height: 44px;
+    padding-inline: 18px;
+    border-radius: 9999px;
+  }
+  .button__root--size-lg {
+    height: 54px;
+    padding-inline: 20px;
+    border-radius: 9999px;
+  }
+  .button__background--size-sm {
+    border-radius: 9999px;
+  }
+  .button__background--size-md {
+    border-radius: 9999px;
+  }
+  .button__background--size-lg {
+    border-radius: 9999px;
+  }
+  /* HeroUI's icon-only rule, restated: the size rules above add side padding, which squeezed
+     round icon buttons. */
+  .button__root--is-icon-only {
+    padding: 0;
+    aspect-ratio: 1;
+  }
+  .button__label {
+    @apply font-semibold;
+  }
+  .button__label--size-sm {
+    font-size: var(--text-secondary);
+    line-height: var(--text-secondary--line-height);
+  }
+  .button__label--size-md {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+  .button__label--size-lg {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+
+  /* ListGroup: the inset grouped list. 54 pt rows with 16 pt sides. */
+  .list-group__item {
+    min-height: 54px;
+    padding-block: 8px;
+    padding-inline: 16px;
+    gap: 12px;
+  }
+  /* HeroUI gives list rows no press feedback; this is the same tint as a pressed button. */
+  .list-group__item:active {
+    background-color: var(--color-default);
+  }
+  .list-group__item-title {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    @apply font-normal;
+  }
+  .list-group__item-description {
+    font-size: var(--text-secondary);
+    line-height: var(--text-secondary--line-height);
+  }
+
+  /* Tabs (primary): the segmented control. */
+  .tabs__label {
+    font-size: var(--text-secondary);
+    line-height: var(--text-secondary--line-height);
+    @apply font-semibold;
+  }
+
+  /* TagGroup (default size): 36 pt chips; selected gets an accent outline. */
+  .tag-group__tag--size-md {
+    height: 36px;
+    padding: 0;
+    padding-inline: 14px;
+    gap: 7px;
+    border-radius: 9999px;
+    border-width: 1px;
+    border-color: transparent;
+  }
+  .tag-group__tag-background--size-md {
+    border-radius: 9999px;
+  }
+  .tag-group__tag--variant-default {
+    background-color: var(--color-surface-secondary);
+  }
+  .tag-group__tag--is-selected {
+    background-color: var(--color-accent-soft);
+    border-color: var(--color-accent);
+  }
+  .tag-group__tag-label {
+    color: var(--color-foreground);
+  }
+  .tag-group__tag-label--size-md {
+    font-size: var(--text-secondary);
+    line-height: var(--text-secondary--line-height);
+  }
+  .tag-group__tag-label--is-selected {
+    color: var(--color-accent);
+    @apply font-semibold;
+  }
+
+  /* Dialog: the confirmation, with the overlay surface and larger corners. */
+  .dialog__content {
+    padding: 24px;
+    border-radius: var(--radius-4xl);
+  }
+  .dialog__content-background {
+    border-radius: var(--radius-4xl);
+  }
+  .dialog__label {
+    font-size: var(--text-headline);
+    line-height: var(--text-headline--line-height);
+    @apply font-semibold;
+  }
+  .dialog__description {
+    font-size: var(--text-secondary);
+    line-height: var(--text-secondary--line-height);
+  }
+}

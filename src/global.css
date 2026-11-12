@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "uniwind";
+
+@import "heroui-native/styles";
+@import "./heroui-overrides.css";
+
+/* End-user path: heroui-native lives in the project's node_modules, one
+   level up from this src/global.css file. */
+@source '../node_modules/heroui-native/lib';
+
+/* Inter, loaded in src/app/_layout.tsx. Define all four weights together, and keep the names
+   in sync with the useFonts keys. */
+@theme {
+  --font-normal: "Inter_400Regular";
+  --font-medium: "Inter_500Medium";
+  --font-semibold: "Inter_600SemiBold";
+  --font-bold: "Inter_700Bold";
+
+  /* The text sizes. Set the weight with font-* classes. */
+  --text-large-title: 34px;
+  --text-large-title--line-height: 41px;
+  --text-title: 22px;
+  --text-title--line-height: 28px;
+  --text-headline: 20px;
+  --text-headline--line-height: 25px;
+  --text-body: 17px;
+  --text-body--line-height: 22px;
+  --text-secondary: 15px;
+  --text-secondary--line-height: 20px;
+  --text-caption: 13px;
+  --text-caption--line-height: 18px;
+  --text-tab: 11px;
+  --text-tab--line-height: 13px;
+
+  /* Sheet corner radius, the one addition to HeroUI's radius scale. */
+  --radius-sheet: 42px;
+}
+
+/* The palette. Hover, soft and focus shades are derived
+   from these by HeroUI, so only the base values are set here. */
+@layer theme {
+  :root {
+    @variant light {
+      --background: #f2f2f7;
+      --surface: #ffffff;
+      --surface-secondary: #ebebf0;
+      --foreground: #0c0c10;
+      --accent: #4b5bd8;
+      --accent-foreground: #ffffff;
+      --success: #2e9e5b;
+      --danger: #e5484d;
+      --warning: #e8821a;
+    }
+
+    @variant dark {
+      --background: #000000;
+      --surface: #1c1c1e;
+      --surface-secondary: #2c2c2e;
+      --accent: #8c9bff;
+      --accent-foreground: #10132b;
+      --success: #4cc37d;
+      --danger: #ff6369;
+      --warning: #ffa23d;
+    }
+  }
+}
